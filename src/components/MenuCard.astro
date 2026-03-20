@@ -1,0 +1,29 @@
+---
+import type { MenuItem } from "../data/menuItems";
+
+interface Props {
+    item: MenuItem;
+}
+
+const { item } = Astro.props;
+---
+
+<div class="card bg-base-100 cursor-pointer mt-8">
+    <figure>
+        <img
+            src={item.image}
+            alt={item.name}
+            class="h-96 w-96 object-cover rounded-lg"
+        />
+    </figure>
+    <div class="card-body">
+        <h2 class="card-title text-amber-900">
+            {item.name}
+            {!item.available && <span class="badge badge-error">Sold Out</span>}
+            {item.featured && <span class="badge badge-warning">Featured</span>}
+        </h2>
+        <div class="card-actions justify-between items-center mb-2">
+            <span class="text-lg font-bold text-amber-800">R{item.price}</span>
+        </div>
+    </div>
+</div>
