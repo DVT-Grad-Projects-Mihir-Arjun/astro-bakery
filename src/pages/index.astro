@@ -1,5 +1,8 @@
 ---
-
+import "../styles/global.css";
+import { Croissant } from "lucide-astro";
+import { menuItems } from "../data/menuItems";
+import MenuCard from "../components/MenuCard.astro";
 ---
 
 <html lang="en">
@@ -11,7 +14,15 @@
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Bakery</title>
 	</head>
-	<body>
-		<h1>Astro Bakery</h1>
+	<body class="flex flex-col min-h-screen">
+		<header class="bg-amber-900 h-12 w-full flex items-center px-6">
+			<Croissant size={30} color="gold" stroke-width={1.5} />
+			<h1 class="text-xl font-bold text-amber-100 ml-2">Astro Bakery</h1>
+		</header>
+		<div
+			class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full justify-items-center bg-amber-50"
+		>
+			{menuItems.map((item) => <MenuCard item={item} />)}
+		</div>
 	</body>
 </html>
