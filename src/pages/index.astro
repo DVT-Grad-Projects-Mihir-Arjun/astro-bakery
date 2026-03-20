@@ -1,5 +1,6 @@
 ---
-import '../styles/global.css'
+import "../styles/global.css";
+import { Croissant } from "lucide-astro";
 ---
 
 <html lang="en">
@@ -12,11 +13,12 @@ import '../styles/global.css'
 		<title>Astro Bakery</title>
 	</head>
 	<body class="flex flex-col min-h-screen">
-  <header class="bg-amber-900 h-12 w-full flex items-center px-6">
-    <h1 class="text-xl font-bold text-amber-100">Astro Bakery</h1>
-  </header>
-  <div class="flex flex-col flex-1 w-full bg-amber-50">
-    <!-- My bakery items will go here -->
-  </div>
-</body>
+		<header class="bg-amber-900 h-12 w-full flex items-center px-6">
+			<Croissant size={30} color="tan" stroke-width={1.5} />
+			<h1 class="text-xl font-bold text-amber-100 ml-2">Astro Bakery</h1>
+		</header>
+		<div class="flex flex-col flex-1 w-full bg-amber-50">
+			<!-- My bakery items will go here -->
+		</div>
+	</body>
 </html>
